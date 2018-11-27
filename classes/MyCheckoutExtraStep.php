@@ -32,15 +32,18 @@ class MyCheckoutExtraStep extends AbstractCheckoutStep
         TranslatorInterface $translator
     ) {
         parent::__construct($context, $translator);
+
+        $this->template = 'module:fbsample_order/views/templates/front/checkout/step/extra.tpl';
     }
 
     public function handleRequest(array $requestParameters = array())
     {
-        // this step is always reachable
-        $this->step_is_reachable = true;
+        // if this step was reached (= all previous steps complete)
+        if ($this->step_is_reachable) {
 
-        // This step is always completed
-        $this->step_is_complete = true;
+            // This step is always completed
+            $this->step_is_complete = true;
+        }
 
         // Set Title 
         $this->setTitle(
@@ -56,7 +59,7 @@ class MyCheckoutExtraStep extends AbstractCheckoutStep
     {
         // Set Template : Use template in fbsample_order module
         return $this->renderTemplate(
-            'module:fbsample_order/views/templates/front/checkout/step/extra.tpl',
+            $this->getTemplate(),
             $extraParams,
             array(
                 'myExtraData' => 'Extra Data for current order'

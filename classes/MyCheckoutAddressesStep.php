@@ -56,9 +56,11 @@ class MyCheckoutAddressesStep extends CheckoutAddressesStep
             null                
         );
 
+        $this->template = 'module:fbsample_order/views/templates/front/checkout/step/addresses.tpl';
+
         // Change Template : Use template in fbsample_order module
         return $this->renderTemplate(
-            'module:fbsample_order/views/templates/front/checkout/step/addresses.tpl',
+            $this->getTemplate(),
             $extraParams,
             $tplParameters
         );
