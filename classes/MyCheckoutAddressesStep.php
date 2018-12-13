@@ -37,7 +37,7 @@ class MyCheckoutAddressesStep extends CheckoutAddressesStep
             'order',
             array('use_same_address' => 0),
             true,
-            null                
+            null
         );
         // Change URL : Use Order controller in fbsample_order module
         $tplParameters['new_address_delivery_url'] = $this->context->link->getModuleLink(
@@ -45,7 +45,7 @@ class MyCheckoutAddressesStep extends CheckoutAddressesStep
             'order',
             array('newAddress' => 'delivery'),
             true,
-            null                
+            null
         );
         // Change URL : Use Order controller in fbsample_order module
         $tplParameters['new_address_invoice_url'] = $this->context->link->getModuleLink(
@@ -53,7 +53,7 @@ class MyCheckoutAddressesStep extends CheckoutAddressesStep
             'order',
             array('newAddress' => 'invoice'),
             true,
-            null                
+            null
         );
 
         $this->template = 'module:fbsample_order/views/templates/front/checkout/step/addresses.tpl';

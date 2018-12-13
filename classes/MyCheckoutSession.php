@@ -25,7 +25,7 @@
  */
 
 class MyCheckoutSession extends CheckoutSession
-{   
+{
     public function getCheckoutURL()
     {
         // Change URL : Use Order controller in fbsample_order module

@@ -23,6 +23,7 @@
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  * International Registered Trademark & Property of PrestaShop SA
  */
+
 use Symfony\Component\Translation\TranslatorInterface;
 
 class MyCheckoutExtraStep extends AbstractCheckoutStep
@@ -40,12 +41,11 @@ class MyCheckoutExtraStep extends AbstractCheckoutStep
     {
         // if this step was reached (= all previous steps complete)
         if ($this->step_is_reachable) {
-
             // This step is always completed
             $this->step_is_complete = true;
         }
 
-        // Set Title 
+        // Set Title
         $this->setTitle(
             $this->getTranslator()->trans(
                 'Extra Information',
@@ -66,5 +66,4 @@ class MyCheckoutExtraStep extends AbstractCheckoutStep
             )
         );
     }
-
 }
